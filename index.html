@@ -1,223 +1,291 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>爵士鼓初級教學</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groove Start · 爵士鼓入門教學</title>
+  <meta name="description" content="這是一個爵士鼓初學者教學網站，提供基礎節奏訓練、打擊技巧、實用練習與課程資訊，幫助你從零開始學會打鼓。">
 
-<style>
+  <style>
+    /* CSS:BASE-START */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-/* CSS:GLOBAL-START */
-body {
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background-color: #1b1612;
-  color: #f5f1eb;
-  line-height: 1.6;
-}
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background-color: #0f172a;
+      color: #e5e7eb;
+    }
 
-.section {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-.title {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #d6a96c;
-}
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
 
-.text-muted {
-  color: #cbbba3;
-}
-/* CSS:GLOBAL-END */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
+    a {
+      color: #22d3ee;
+      text-decoration: none;
+    }
 
-/* CSS:HERO-START */
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(to bottom, #2a211b, #1b1612);
-}
+    a:hover {
+      text-decoration: underline;
+    }
 
-.hero-title {
-  font-size: 40px;
-  margin-bottom: 20px;
-}
+    .section {
+      padding: 64px 0;
+    }
 
-.hero-subtitle {
-  font-size: 18px;
-  margin-bottom: 30px;
-  color: #cbbba3;
-}
+    .section-title {
+      margin-bottom: 16px;
+      font-size: 1.8rem;
+    }
 
-.cta-button {
-  display: inline-block;
-  padding: 12px 30px;
-  background-color: #a67c52;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 30px;
-}
-/* CSS:HERO-END */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background-color: #020617;
+      border-bottom: 1px solid #1e293b;
+      z-index: 100;
+    }
 
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 56px;
+    }
 
-/* CSS:ABOUT-START */
-.about-box {
-  background-color: #2a211b;
-  padding: 30px;
-  border-radius: 10px;
-}
-/* CSS:ABOUT-END */
+    .logo {
+      font-weight: bold;
+      font-size: 1rem;
+    }
 
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
 
-/* CSS:SKILLS-START */
-.skills-list {
-  list-style: none;
-  padding: 0;
-}
+    .nav-link {
+      font-size: 0.9rem;
+      padding: 4px 6px;
+    }
 
-.skills-item {
-  padding: 10px 0;
-  border-bottom: 1px solid #3a2f27;
-}
-/* CSS:SKILLS-END */
+    footer {
+      margin-top: auto;
+      padding: 24px 0;
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+    /* CSS:BASE-END */
 
+    /* CSS:HERO-START */
+    .section-hero {
+      background: linear-gradient(180deg, #020617, #0f172a);
+    }
 
-/* CSS:PROJECTS-START */
-.projects-list {
-  list-style: none;
-  padding: 0;
-}
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
 
-.projects-item {
-  padding: 15px;
-  margin-bottom: 10px;
-  background-color: #2a211b;
-  border-radius: 8px;
-}
-/* CSS:PROJECTS-END */
+    .hero-title {
+      font-size: 2rem;
+      margin: 0;
+    }
 
+    .hero-text {
+      color: #cbd5f5;
+    }
+    /* CSS:HERO-END */
 
-/* CSS:CONTACT-START */
-.form-group {
-  margin-bottom: 15px;
-}
+    /* CSS:ABOUT-START */
+    .section-about {
+      background-color: #020617;
+    }
+    /* CSS:ABOUT-END */
 
-.input,
-.select {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-}
+    /* CSS:SKILLS-START */
+    .section-skills {
+      background-color: #0f172a;
+    }
+    /* CSS:SKILLS-END */
 
-.contact-info {
-  margin-top: 30px;
-  color: #cbbba3;
-}
-/* CSS:CONTACT-END */
+    /* CSS:PROJECTS-START */
+    .section-projects {
+      background-color: #020617;
+    }
+    /* CSS:PROJECTS-END */
 
-</style>
+    /* CSS:CONTACT-START */
+    .section-contact {
+      background-color: #0f172a;
+    }
+
+    .contact-links {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    /* CSS:CONTACT-END */
+
+    /* CSS:RWD-START */
+    @media (min-width: 768px) {
+      .hero-content {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .hero-text-block {
+        flex: 1;
+      }
+
+      .hero-image {
+        flex: 1;
+      }
+
+      .nav-links {
+        gap: 20px;
+      }
+    }
+    /* CSS:RWD-END */
+  </style>
 </head>
 
 <body>
+  <div class="page">
 
-<!-- HTML:HERO-START -->
-<section class="hero">
-  <div class="section">
-    <h1 class="hero-title">讓節奏成為你的語言</h1>
-    <p class="hero-subtitle">初學者也能輕鬆上手的爵士鼓入門課程</p>
-    <a href="#" class="cta-button">免費試聽課程</a>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="logo">Groove Start · Drum Beginner</div>
+        <nav class="nav-links">
+          <a class="nav-link" href="#hero">首頁</a>
+          <a class="nav-link" href="#about">關於課程</a>
+          <a class="nav-link" href="#skills">學習內容</a>
+          <a class="nav-link" href="#projects">課程成果</a>
+          <a class="nav-link" href="#contact">聯絡報名</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- SECTION:HERO-START -->
+      <section id="hero" class="section section-hero">
+        <div class="container hero-content">
+          
+          <div class="hero-text-block">
+            <h1 class="hero-title">從零開始，打出你的第一個節奏</h1>
+            <p class="hero-text">
+              專為初學者設計的爵士鼓入門課程，不需要音樂基礎，也能輕鬆上手，建立穩定節奏感與基本打擊技巧。
+            </p>
+            <p class="hero-text">
+              透過簡單清楚的教學方式，帶你一步步學會節拍、手腳協調與基本節奏型，讓你在短時間內打出完整節奏。
+            </p>
+          </div>
+
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1524230659092-07f99a75c013?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="正在演奏爵士鼓的鼓手" loading="lazy">
+          </div>
+
+        </div>
+      </section>
+      <!-- SECTION:HERO-END -->
+
+      <!-- SECTION:ABOUT-START -->
+      <section id="about" class="section section-about" aria-labelledby="about-heading">
+        <div class="container">
+          <h2 id="about-heading" class="section-title">這門課適合誰？</h2>
+          <p>
+            本課程專為「完全沒有打鼓經驗」或「曾經學過但中斷」的學員設計，透過循序漸進的方式，幫助你重新建立節奏感與信心。
+          </p>
+          <p>
+            無論你是上班族想培養興趣、學生想接觸音樂，或單純想嘗試打鼓，都可以在這裡找到適合自己的學習節奏。
+          </p>
+        </div>
+      </section>
+      <!-- SECTION:ABOUT-END -->
+
+      <!-- SECTION:SKILLS-START -->
+      <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
+        <div class="container">
+          <h2 id="skills-heading" class="section-title">你會學到什麼</h2>
+          <p>
+            課程內容包含基礎節拍訓練、四肢協調、基本節奏型（如 4/4 Rock Groove）以及簡單過門（Fill）的練習。
+          </p>
+          <p>
+            同時也會帶你理解節奏結構，讓你不只是照打，而是真正「聽懂節奏、掌握節奏」。
+          </p>
+        </div>
+      </section>
+      <!-- SECTION:SKILLS-END -->
+
+      <!-- SECTION:PROJECTS-START -->
+      <section id="projects" class="section section-projects" aria-labelledby="projects-heading">
+        <div class="container">
+          <h2 id="projects-heading" class="section-title">學員成果展示</h2>
+          <p>
+            這裡將展示學員在課程前後的進步成果，例如從完全不會打節拍，到可以穩定完成一段完整節奏。
+          </p>
+          <p>
+            透過實際案例，讓你更清楚了解課程的學習成效與成長幅度。
+          </p>
+        </div>
+      </section>
+      <!-- SECTION:PROJECTS-END -->
+
+      <!-- SECTION:CONTACT-START -->
+      <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
+        <div class="container">
+          <h2 id="contact-heading" class="section-title">立即報名體驗課程</h2>
+          <p>
+            如果你也想開始學打鼓，歡迎透過以下方式與我們聯絡，我們會協助安排適合你的上課時間與課程內容。
+          </p>
+          <p>
+            現在就跨出第一步，開始你的節奏旅程。
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:drumclass@example.com">Email：drumclass@example.com</a>
+            <a href="tel:+886900123456">電話：0900-123-456</a>
+            <a href="https://line.me/ti/p/@drumgroove">Line：@drumgroove</a>
+            <a href="https://instagram.com/drumgroove">Instagram</a>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION:CONTACT-END -->
+
+    </main>
+
+    <footer>
+      <div class="container">
+        © 2026 Groove Start · 爵士鼓入門教學
+      </div>
+    </footer>
+
   </div>
-</section>
-<!-- HTML:HERO-END -->
-
-
-<!-- HTML:ABOUT-START -->
-<section class="section">
-  <h2 class="title">關於講師</h2>
-  <div class="about-box">
-    <p>擁有 12 年爵士鼓教學經驗，曾參與多場現場演出與樂團合作，專注於初學者入門教學。</p>
-    <p class="text-muted">相信節奏來自身體而非死背，透過簡單拆解與反覆練習，讓每個人都能自然打出 groove。</p>
-  </div>
-</section>
-<!-- HTML:ABOUT-END -->
-
-
-<!-- HTML:SKILLS-START -->
-<section class="section">
-  <h2 class="title">課程內容</h2>
-  <ul class="skills-list">
-    <li class="skills-item">基本 4/4 節奏（最常見的流行節奏入門）</li>
-    <li class="skills-item">Hi-hat 控制技巧（穩定節奏的關鍵）</li>
-    <li class="skills-item">基礎過門 Fill（讓節奏更有變化）</li>
-    <li class="skills-item">簡單節奏組合（可以打出完整歌曲段落）</li>
-    <li class="skills-item">節拍器練習（建立穩定拍感）</li>
-  </ul>
-</section>
-<!-- HTML:SKILLS-END -->
-
-
-<!-- HTML:PROJECTS-START -->
-<section class="section">
-  <h2 class="title">學習成果</h2>
-  <ul class="projects-list">
-    <li class="projects-item">初學者 4 週成果展示（前後對比）</li>
-    <li class="projects-item">基礎節奏＋過門實戰演練</li>
-    <li class="projects-item">節奏感訓練實錄（穩定度提升）</li>
-  </ul>
-</section>
-<!-- HTML:PROJECTS-END -->
-
-
-<!-- HTML:CONTACT-START -->
-<section class="section">
-  <h2 class="title">立即報名</h2>
-
-  <form>
-    <div class="form-group">
-      <input class="input" type="text" placeholder="姓名">
-    </div>
-
-    <div class="form-group">
-      <input class="input" type="text" placeholder="聯絡電話">
-    </div>
-
-    <div class="form-group">
-      <input class="input" type="email" placeholder="Email">
-    </div>
-
-    <div class="form-group">
-      <select class="select">
-        <option>是否有音樂基礎</option>
-        <option>無</option>
-        <option>一點點</option>
-        <option>有</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <select class="select">
-        <option>想上課時段</option>
-        <option>平日</option>
-        <option>假日</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <button class="cta-button">送出報名</button>
-    </div>
-  </form>
-
-  <div class="contact-info">
-    <p>Email：drumclass@example.com</p>
-    <p>Line：@drumgroove</p>
-    <p>電話：0900-123-456</p>
-  </div>
-</section>
-<!-- HTML:CONTACT-END -->
-
 </body>
 </html>
