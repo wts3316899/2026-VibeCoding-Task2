@@ -1,294 +1,223 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alex Chen · Frontend Developer 個人網站</title>
-  <meta name="description" content="這是一個前端工程師的個人品牌網站，用於介紹個人背景、技能、作品集與聯絡方式，並展示專業能力與實務經驗。">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爵士鼓初級教學</title>
 
-  <style>
-    /* CSS:BASE-START */
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
+<style>
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
-      background-color: #0f172a;
-      color: #e5e7eb;
-    }
+/* CSS:GLOBAL-START */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #1b1612;
+  color: #f5f1eb;
+  line-height: 1.6;
+}
 
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
 
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
+.title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #d6a96c;
+}
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+.text-muted {
+  color: #cbbba3;
+}
+/* CSS:GLOBAL-END */
 
-    a {
-      color: #22d3ee;
-      text-decoration: none;
-    }
 
-    a:hover {
-      text-decoration: underline;
-    }
+/* CSS:HERO-START */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(to bottom, #2a211b, #1b1612);
+}
 
-    .section {
-      padding: 64px 0;
-    }
+.hero-title {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
 
-    .section-title {
-      margin-bottom: 16px;
-      font-size: 1.8rem;
-    }
+.hero-subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #cbbba3;
+}
 
-    .site-header {
-      position: sticky;
-      top: 0;
-      background-color: #020617;
-      border-bottom: 1px solid #1e293b;
-      z-index: 100;
-    }
+.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #a67c52;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+}
+/* CSS:HERO-END */
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 56px;
-    }
 
-    .logo {
-      font-weight: bold;
-      font-size: 1rem;
-    }
+/* CSS:ABOUT-START */
+.about-box {
+  background-color: #2a211b;
+  padding: 30px;
+  border-radius: 10px;
+}
+/* CSS:ABOUT-END */
 
-    .nav-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
 
-    .nav-link {
-      font-size: 0.9rem;
-      padding: 4px 6px;
-    }
+/* CSS:SKILLS-START */
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
 
-    footer {
-      margin-top: auto;
-      padding: 24px 0;
-      border-top: 1px solid #1e293b;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #9ca3af;
-    }
-    /* CSS:BASE-END */
+.skills-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #3a2f27;
+}
+/* CSS:SKILLS-END */
 
-    /* CSS:HERO-START */
-    .section-hero {
-      background: linear-gradient(180deg, #020617, #0f172a);
-    }
 
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
+/* CSS:PROJECTS-START */
+.projects-list {
+  list-style: none;
+  padding: 0;
+}
 
-    .hero-title {
-      font-size: 2rem;
-      margin: 0;
-    }
+.projects-item {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #2a211b;
+  border-radius: 8px;
+}
+/* CSS:PROJECTS-END */
 
-    .hero-text {
-      color: #cbd5f5;
-    }
-    /* CSS:HERO-END */
 
-    /* CSS:ABOUT-START */
-    .section-about {
-      background-color: #020617;
-    }
-    /* CSS:ABOUT-END */
+/* CSS:CONTACT-START */
+.form-group {
+  margin-bottom: 15px;
+}
 
-    /* CSS:SKILLS-START */
-    .section-skills {
-      background-color: #0f172a;
-    }
-    /* CSS:SKILLS-END */
+.input,
+.select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
 
-    /* CSS:PROJECTS-START */
-    .section-projects {
-      background-color: #020617;
-    }
-    /* CSS:PROJECTS-END */
+.contact-info {
+  margin-top: 30px;
+  color: #cbbba3;
+}
+/* CSS:CONTACT-END */
 
-    /* CSS:CONTACT-START */
-    .section-contact {
-      background-color: #0f172a;
-    }
-
-    .contact-links {
-      margin-top: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    /* CSS:CONTACT-END */
-
-    /* CSS:RWD-START */
-    @media (min-width: 768px) {
-      .hero-content {
-        flex-direction: row;
-        align-items: center;
-      }
-
-      .hero-text-block {
-        flex: 1;
-      }
-
-      .hero-image {
-        flex: 1;
-      }
-
-      .nav-links {
-        gap: 20px;
-      }
-    }
-    /* CSS:RWD-END */
-  </style>
+</style>
 </head>
 
 <body>
-  <div class="page">
 
-    <header class="site-header">
-      <div class="container nav">
-        <div class="logo">Alex Chen · Frontend Dev</div>
-        <nav class="nav-links">
-          <a class="nav-link" href="#hero">首頁</a>
-          <a class="nav-link" href="#about">關於我</a>
-          <a class="nav-link" href="#skills">技能</a>
-          <a class="nav-link" href="#projects">作品集</a>
-          <a class="nav-link" href="#contact">聯絡我</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-
-      <!-- SECTION:HERO-START -->
-      <section id="hero" class="section section-hero">
-        <div class="container hero-content">
-          
-          <div class="hero-text-block">
-            <h1 class="hero-title">這裡是個人品牌網站的主視覺區（Hero Section）</h1>
-            <p class="hero-text">
-              這裡未來會放一句話自我介紹、核心職稱（例如 Frontend Developer）以及簡單的個人定位，讓訪客在第一眼就理解你的專業。
-            </p>
-            <p class="hero-text">
-              也會加入行動呼籲，例如「瀏覽作品集」或「下載履歷」，引導使用者進一步探索網站內容。
-            </p>
-            <p>
-              ⚠️ 之後會用 Section SDD 的 Prompt 產生正式文案與版面，再把整個 section 貼回來取代這一區。
-            </p>
-          </div>
-
-          <div class="hero-image">
-            <img src="https://source.unsplash.com/800x600/?developer,laptop" alt="在筆電前撰寫程式碼的前端開發者" loading="lazy">
-          </div>
-
-        </div>
-      </section>
-      <!-- SECTION:HERO-END -->
-
-      <!-- SECTION:ABOUT-START -->
-      <section id="about" class="section section-about" aria-labelledby="about-heading">
-        <div class="container">
-          <h2 id="about-heading" class="section-title">關於我（之後會用 Section SDD 替換）</h2>
-          <p>
-            這裡目前是 About 區的占位內容，未來會放個人背景、自我介紹與經歷說明，讓訪客了解你的專業與故事。
-          </p>
-          <p>
-            ⚠️ 之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在這兩個註解中間，完全取代現在這一區。
-          </p>
-        </div>
-      </section>
-      <!-- SECTION:ABOUT-END -->
-
-      <!-- SECTION:SKILLS-START -->
-      <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
-        <div class="container">
-          <h2 id="skills-heading" class="section-title">技能（之後會用 Section SDD 替換）</h2>
-          <p>
-            這裡目前是 Skills 區的占位內容，未來會展示你的技術能力，例如 HTML、CSS、JavaScript、框架與工具等。
-          </p>
-          <p>
-            ⚠️ 之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在這兩個註解中間，完全取代現在這一區。
-          </p>
-        </div>
-      </section>
-      <!-- SECTION:SKILLS-END -->
-
-      <!-- SECTION:PROJECTS-START -->
-      <section id="projects" class="section section-projects" aria-labelledby="projects-heading">
-        <div class="container">
-          <h2 id="projects-heading" class="section-title">作品集（之後會用 Section SDD 替換）</h2>
-          <p>
-            這裡目前是 Projects 區的占位內容，未來會展示實際作品案例，包含專案簡介、技術使用與成果說明。
-          </p>
-          <p>
-            ⚠️ 之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在這兩個註解中間，完全取代現在這一區。
-          </p>
-        </div>
-      </section>
-      <!-- SECTION:PROJECTS-END -->
-
-      <!-- SECTION:CONTACT-START -->
-      <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
-        <div class="container">
-          <h2 id="contact-heading" class="section-title">聯絡我（之後會用 Section SDD 替換）</h2>
-          <p>
-            這裡目前是 Contact 區的占位內容，未來會提供聯絡方式，例如 Email、電話或社群連結。
-          </p>
-          <p>
-            ⚠️ 之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在這兩個註解中間，完全取代現在這一區。
-          </p>
-
-          <div class="contact-links">
-            <a href="mailto:hello@example.com">Email：hello@example.com</a>
-            <a href="tel:+886900000000">電話：+886 900 000 000</a>
-            <a href="https://github.com/yourname">GitHub</a>
-            <a href="https://www.linkedin.com/in/yourname">LinkedIn</a>
-          </div>
-        </div>
-      </section>
-      <!-- SECTION:CONTACT-END -->
-
-    </main>
-
-    <footer>
-      <div class="container">
-        © 2026 Alex Chen · Frontend Developer. All rights reserved.
-      </div>
-    </footer>
-
+<!-- HTML:HERO-START -->
+<section class="hero">
+  <div class="section">
+    <h1 class="hero-title">讓節奏成為你的語言</h1>
+    <p class="hero-subtitle">初學者也能輕鬆上手的爵士鼓入門課程</p>
+    <a href="#" class="cta-button">免費試聽課程</a>
   </div>
+</section>
+<!-- HTML:HERO-END -->
+
+
+<!-- HTML:ABOUT-START -->
+<section class="section">
+  <h2 class="title">關於講師</h2>
+  <div class="about-box">
+    <p>擁有 12 年爵士鼓教學經驗，曾參與多場現場演出與樂團合作，專注於初學者入門教學。</p>
+    <p class="text-muted">相信節奏來自身體而非死背，透過簡單拆解與反覆練習，讓每個人都能自然打出 groove。</p>
+  </div>
+</section>
+<!-- HTML:ABOUT-END -->
+
+
+<!-- HTML:SKILLS-START -->
+<section class="section">
+  <h2 class="title">課程內容</h2>
+  <ul class="skills-list">
+    <li class="skills-item">基本 4/4 節奏（最常見的流行節奏入門）</li>
+    <li class="skills-item">Hi-hat 控制技巧（穩定節奏的關鍵）</li>
+    <li class="skills-item">基礎過門 Fill（讓節奏更有變化）</li>
+    <li class="skills-item">簡單節奏組合（可以打出完整歌曲段落）</li>
+    <li class="skills-item">節拍器練習（建立穩定拍感）</li>
+  </ul>
+</section>
+<!-- HTML:SKILLS-END -->
+
+
+<!-- HTML:PROJECTS-START -->
+<section class="section">
+  <h2 class="title">學習成果</h2>
+  <ul class="projects-list">
+    <li class="projects-item">初學者 4 週成果展示（前後對比）</li>
+    <li class="projects-item">基礎節奏＋過門實戰演練</li>
+    <li class="projects-item">節奏感訓練實錄（穩定度提升）</li>
+  </ul>
+</section>
+<!-- HTML:PROJECTS-END -->
+
+
+<!-- HTML:CONTACT-START -->
+<section class="section">
+  <h2 class="title">立即報名</h2>
+
+  <form>
+    <div class="form-group">
+      <input class="input" type="text" placeholder="姓名">
+    </div>
+
+    <div class="form-group">
+      <input class="input" type="text" placeholder="聯絡電話">
+    </div>
+
+    <div class="form-group">
+      <input class="input" type="email" placeholder="Email">
+    </div>
+
+    <div class="form-group">
+      <select class="select">
+        <option>是否有音樂基礎</option>
+        <option>無</option>
+        <option>一點點</option>
+        <option>有</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <select class="select">
+        <option>想上課時段</option>
+        <option>平日</option>
+        <option>假日</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button class="cta-button">送出報名</button>
+    </div>
+  </form>
+
+  <div class="contact-info">
+    <p>Email：drumclass@example.com</p>
+    <p>Line：@drumgroove</p>
+    <p>電話：0900-123-456</p>
+  </div>
+</section>
+<!-- HTML:CONTACT-END -->
+
 </body>
 </html>
